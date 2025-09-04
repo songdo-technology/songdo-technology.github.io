@@ -279,6 +279,24 @@
             color: var(--card-color);
         }
         
+        .faq-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .faq-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+        
+        .faq-list li i {
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
         .footer {
             text-align: center;
             margin-top: 40px;
@@ -438,10 +456,10 @@
                     Update Delays
                 </h3>
                 <ul class="faq-list">
-                    <li><i class="fab fa-google" style="color: #4285f4;"></i><strong>Google Calendar:</strong> Every 8-24 hours</li>
-                    <li><i class="fab fa-apple" style="color: #007aff;"></i><strong>iPhone/iPad:</strong> Every 15 minutes to several hours</li>
-                    <li><i class="fab fa-microsoft" style="color: #0078d4;"></i><strong>Outlook:</strong> Every 3 hours by default</li>
-                    <li><i class="fab fa-apple" style="color: #007aff;"></i><strong>Apple Calendar:</strong> Every 15 minutes to 1 hour</li>
+                    <li><i class="fab fa-google" style="color: #4285f4;"></i><span><strong>Google Calendar:</strong> Every 8-24 hours</span></li>
+                    <li><i class="fab fa-apple" style="color: #007aff;"></i><span><strong>iPhone/iPad:</strong> Every 15 minutes to several hours</span></li>
+                    <li><i class="fab fa-microsoft" style="color: #0078d4;"></i><span><strong>Outlook:</strong> Every 3 hours by default</span></li>
+                    <li><i class="fab fa-apple" style="color: #007aff;"></i><span><strong>Apple Calendar:</strong> Every 15 minutes to 1 hour</span></li>
                 </ul>
                 <p style="color: #6c757d; font-size: 0.9rem; margin-top: 10px;">This is normal behavior to reduce server load.</p>
             </div>
@@ -452,10 +470,10 @@
                     Force Refresh
                 </h3>
                 <ul class="faq-list">
-                    <li><i class="fab fa-google" style="color: #4285f4;"></i><strong>Google Calendar:</strong> Press Ctrl+F5 (Windows) or Cmd+Shift+R (Mac) in browser</li>
-                    <li><i class="fab fa-apple" style="color: #007aff;"></i><strong>iPhone/iPad:</strong> Open Calendar app → Pull down to refresh</li>
-                    <li><i class="fab fa-apple" style="color: #007aff;"></i><strong>Mac Calendar:</strong> View menu → Refresh Calendars or press Cmd+R</li>
-                    <li><i class="fab fa-microsoft" style="color: #0078d4;"></i><strong>Outlook:</strong> Right-click calendar name → "Update Folder" or press F9</li>
+                    <li><i class="fab fa-google" style="color: #4285f4;"></i><span><strong>Google Calendar:</strong> Press Ctrl+F5 (Windows) or Cmd+Shift+R (Mac) in browser</span></li>
+                    <li><i class="fab fa-apple" style="color: #007aff;"></i><span><strong>iPhone/iPad:</strong> Open Calendar app → Pull down to refresh</span></li>
+                    <li><i class="fab fa-apple" style="color: #007aff;"></i><span><strong>Mac Calendar:</strong> View menu → Refresh Calendars or press Cmd+R</span></li>
+                    <li><i class="fab fa-microsoft" style="color: #0078d4;"></i><span><strong>Outlook:</strong> Right-click calendar name → "Update Folder" or press F9</span></li>
                 </ul>
             </div>
             
