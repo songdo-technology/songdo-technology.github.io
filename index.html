@@ -377,12 +377,6 @@
     </div>
     
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const actualUrl = 'https://songdo-technology.github.io/8-day-rotation.ics';
-            document.getElementById('calendarUrl').textContent = actualUrl;
-            document.getElementById('lastUpdated').textContent = 'Not updated yet';
-        });
-        
         function copyUrl() {
             const urlText = document.getElementById('calendarUrl').textContent;
             navigator.clipboard.writeText(urlText).then(function() {
