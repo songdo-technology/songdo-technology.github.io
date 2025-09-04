@@ -171,7 +171,6 @@
         .google { --card-color: #4285f4; }
         .apple { --card-color: #007aff; }
         .outlook { --card-color: #0078d4; }
-        .android { --card-color: #3ddc84; }
         
         .instruction-card h3 {
             display: flex;
@@ -190,6 +189,7 @@
         .steps {
             list-style: none;
             padding: 0;
+            counter-reset: step-counter;
         }
         
         .steps li {
@@ -218,8 +218,66 @@
             font-weight: bold;
         }
         
-        .steps {
-            counter-reset: step-counter;
+        .faq-section {
+            margin: 30px 0;
+        }
+        
+        .faq-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .faq-title h2 {
+            color: #2c3e50;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .faq-title i {
+            color: #667eea;
+        }
+        
+        .faq-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .faq-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--card-color);
+        }
+        
+        .faq-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .faq-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.2rem;
+        }
+        
+        .faq-card i {
+            font-size: 1.5rem;
+            color: var(--card-color);
         }
         
         .footer {
@@ -301,7 +359,7 @@
             <p>Copy this URL and add it to your calendar app to subscribe:</p>
             
             <div class="url-container">
-                <p class="calendar-url" id="calendarUrl">https://songdo-technology.github.io/8-day-rotation.ics</p>
+                <p class="calendar-url">https://songdo-technology.github.io/8-day-rotation.ics</p>
                 <button class="copy-btn" onclick="copyUrl()">
                     <i class="fas fa-copy"></i> Copy
                 </button>
@@ -368,66 +426,51 @@
         </div>
         
         <div class="faq-section">
-            <div class="faq-button" onclick="toggleFAQ()">
-                <h3>
+            <div class="faq-title">
+                <h2>
                     <i class="fas fa-question-circle"></i>
                     Calendar FAQ
-                    <i class="fas fa-chevron-down faq-toggle" id="faqToggle"></i>
-                </h3>
+                </h2>
             </div>
             
-            <div class="faq-instructions" id="faqContent">
-                <div class="instruction-card google">
-                    <h3>
-                        <i class="fas fa-sync-alt"></i>
-                        Update Delays
-                    </h3>
-                    <ol class="steps">
-                        <li>Google Calendar: Every 8-24 hours</li>
-                        <li>iPhone/iPad: Every 15 minutes to several hours</li>
-                        <li>Outlook: Every 3 hours by default</li>
-                        <li>Apple Calendar: Every 15 minutes to 1 hour</li>
-                    </ol>
-                    <p style="color: #6c757d; font-size: 0.9rem; margin-top: 10px;">This is normal behavior to reduce server load.</p>
-                </div>
-                
-                <div class="instruction-card apple">
-                    <h3>
-                        <i class="fas fa-mobile-alt"></i>
-                        Force Refresh
-                    </h3>
-                    <ol class="steps">
-                        <li><strong>iPhone/iPad:</strong> Calendar app → Pull down to refresh</li>
-                        <li><strong>Google Calendar:</strong> Refresh browser or mobile pull-to-refresh</li>
-                        <li><strong>Last resort:</strong> Remove and re-add subscription</li>
-                    </ol>
-                </div>
-                
-                <div class="instruction-card outlook">
-                    <h3>
-                        <i class="fas fa-exclamation-triangle"></i>
-                        Still Seeing Old Events?
-                    </h3>
-                    <ol class="steps">
-                        <li>Wait 15-30 minutes for cache to clear</li>
-                        <li>Clear your browser cache</li>
-                        <li>Remove subscription, wait 10 minutes, re-add</li>
-                        <li>Check if you're viewing correct date range</li>
-                    </ol>
-                </div>
-                
-                <div class="instruction-card android">
-                    <h3>
-                        <i class="fas fa-clock"></i>
-                        Update Schedule
-                    </h3>
-                    <ol class="steps">
-                        <li>Calendar updates daily at <strong>6:00 AM Korea time</strong></li>
-                        <li>Data reaches servers: 2-5 minutes</li>
-                        <li>Your calendar app fetches: varies by platform</li>
-                        <li>Check "Last updated" time below for latest refresh</li>
-                    </ol>
-                </div>
+            <div class="faq-card google">
+                <h3>
+                    <i class="fas fa-sync-alt"></i>
+                    Update Delays
+                </h3>
+                <ol class="steps">
+                    <li>Google Calendar: Every 8-24 hours</li>
+                    <li>iPhone/iPad: Every 15 minutes to several hours</li>
+                    <li>Outlook: Every 3 hours by default</li>
+                    <li>Apple Calendar: Every 15 minutes to 1 hour</li>
+                </ol>
+                <p style="color: #6c757d; font-size: 0.9rem; margin-top: 10px;">This is normal behavior to reduce server load.</p>
+            </div>
+            
+            <div class="faq-card apple">
+                <h3>
+                    <i class="fas fa-mobile-alt"></i>
+                    Force Refresh
+                </h3>
+                <ol class="steps">
+                    <li><i class="fab fa-google" style="color: #4285f4; margin-right: 8px;"></i><strong>Google Calendar:</strong> Press Ctrl+F5 (Windows) or Cmd+Shift+R (Mac) in browser</li>
+                    <li><i class="fab fa-apple" style="color: #007aff; margin-right: 8px;"></i><strong>iPhone/iPad:</strong> Open Calendar app → Pull down to refresh</li>
+                    <li><i class="fab fa-apple" style="color: #007aff; margin-right: 8px;"></i><strong>Mac Calendar:</strong> View menu → Refresh Calendars or press Cmd+R</li>
+                    <li><i class="fab fa-microsoft" style="color: #0078d4; margin-right: 8px;"></i><strong>Outlook:</strong> Right-click calendar name → "Update Folder" or press F9</li>
+                </ol>
+            </div>
+            
+            <div class="faq-card outlook">
+                <h3>
+                    <i class="fas fa-exclamation-triangle"></i>
+                    Still Seeing Old Events?
+                </h3>
+                <ol class="steps">
+                    <li>Wait 15-30 minutes for cache to clear</li>
+                    <li>Clear your browser cache</li>
+                    <li>Remove subscription, wait 10 minutes, re-add</li>
+                    <li>Check if you're viewing correct date range</li>
+                </ol>
             </div>
         </div>
         
@@ -442,24 +485,11 @@
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+            document.getElementById('lastUpdated').textContent = 'Not updated yet';
         });
         
-        function toggleFAQ() {
-            const content = document.getElementById('faqContent');
-            const toggle = document.getElementById('faqToggle');
-            
-            if (content.classList.contains('active')) {
-                content.classList.remove('active');
-                toggle.style.transform = 'rotate(0deg)';
-            } else {
-                content.classList.add('active');
-                toggle.style.transform = 'rotate(180deg)';
-            }
-        }
-        
         function copyUrl() {
-            const urlText = document.getElementById('calendarUrl').textContent;
+            const urlText = document.querySelector('.calendar-url').textContent;
             navigator.clipboard.writeText(urlText).then(function() {
                 const btn = document.querySelector('.copy-btn');
                 const originalText = btn.innerHTML;
@@ -471,7 +501,6 @@
                     btn.style.background = '#667eea';
                 }, 2000);
             }).catch(function(err) {
-                console.error('Could not copy text: ', err);
                 const textArea = document.createElement('textarea');
                 textArea.value = urlText;
                 document.body.appendChild(textArea);
@@ -483,7 +512,7 @@
                     btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
                     btn.style.background = '#28a745';
                 } catch (err) {
-                    console.error('Fallback copy failed: ', err);
+                    console.error('Copy failed');
                 }
                 document.body.removeChild(textArea);
             });
