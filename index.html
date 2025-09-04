@@ -492,7 +492,7 @@
         </div>
         
         <div class="footer">
-            <p><i class="fas fa-clock"></i> Last updated: <span id="lastUpdated"></span></p>
+            <p><i class="fas fa-clock"></i> Last updated: <span id="lastUpdated">Not updated yet</span></p>
             <p style="margin-top: 10px; font-size: 0.9rem;">
                 <i class="fas fa-sync-alt"></i>
                 Calendar refreshes automatically - no need to re-subscribe!
@@ -501,9 +501,8 @@
     </div>
     
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('lastUpdated').textContent = 'Not updated yet';
-        });
+        // This will be replaced by the Google Apps Script with the actual timestamp
+        // TIMESTAMP_PLACEHOLDER
         
         function copyUrl() {
             const urlText = document.querySelector('.calendar-url').textContent;
