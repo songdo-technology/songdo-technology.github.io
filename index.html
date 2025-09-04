@@ -376,37 +376,41 @@
         </div>
     </div>
     
-    <script>
-        function copyUrl() {
-            const urlText = document.getElementById('calendarUrl').textContent;
-            navigator.clipboard.writeText(urlText).then(function() {
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+    });
+    
+    function copyUrl() {
+        const urlText = document.getElementById('calendarUrl').textContent;
+        navigator.clipboard.writeText(urlText).then(function() {
+            const btn = document.querySelector('.copy-btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            btn.style.background = '#28a745';
+            
+            setTimeout(function() {
+                btn.innerHTML = originalText;
+                btn.style.background = '#667eea';
+            }, 2000);
+        }).catch(function(err) {
+            console.error('Could not copy text: ', err);
+            const textArea = document.createElement('textarea');
+            textArea.value = urlText;
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+            try {
+                document.execCommand('copy');
                 const btn = document.querySelector('.copy-btn');
-                const originalText = btn.innerHTML;
                 btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
                 btn.style.background = '#28a745';
-                
-                setTimeout(function() {
-                    btn.innerHTML = originalText;
-                    btn.style.background = '#667eea';
-                }, 2000);
-            }).catch(function(err) {
-                console.error('Could not copy text: ', err);
-                const textArea = document.createElement('textarea');
-                textArea.value = urlText;
-                document.body.appendChild(textArea);
-                textArea.focus();
-                textArea.select();
-                try {
-                    document.execCommand('copy');
-                    const btn = document.querySelector('.copy-btn');
-                    btn.innerHTML = '<i class="fas fa-check"></i> Copied!';
-                    btn.style.background = '#28a745';
-                } catch (err) {
-                    console.error('Fallback copy failed: ', err);
-                }
-                document.body.removeChild(textArea);
-            });
-        }
-    </script>
+            } catch (err) {
+                console.error('Fallback copy failed: ', err);
+            }
+            document.body.removeChild(textArea);
+        });
+    }
+</script>
 </body>
 </html>
