@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>📅 School Calendar Subscription</title>
+    <title>School Calendar Subscription</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -368,7 +368,7 @@
         </div>
         
         <div class="footer">
-            <p><i class="fas fa-clock"></i> Last updated: <span id="lastUpdated">Loading...</span></p>
+            <p><i class="fas fa-clock"></i> Last updated: <span id="lastUpdated"></span></p>
             <p style="margin-top: 10px; font-size: 0.9rem;">
                 <i class="fas fa-sync-alt"></i>
                 Calendar refreshes automatically - no need to re-subscribe!
@@ -377,14 +377,10 @@
     </div>
     
     <script>
-        // Update the calendar URL with actual values
         document.addEventListener('DOMContentLoaded', function() {
-            // You can update this manually with your actual GitHub Pages URL
             const actualUrl = 'https://songdo-technology.github.io/8-day-rotation.ics';
             document.getElementById('calendarUrl').textContent = actualUrl;
-            
-            // Set last updated time
-            document.getElementById('lastUpdated').textContent = new Date().toLocaleString();
+            document.getElementById('lastUpdated').textContent = 'Not updated yet';
         });
         
         function copyUrl() {
@@ -401,7 +397,6 @@
                 }, 2000);
             }).catch(function(err) {
                 console.error('Could not copy text: ', err);
-                // Fallback for older browsers
                 const textArea = document.createElement('textarea');
                 textArea.value = urlText;
                 document.body.appendChild(textArea);
