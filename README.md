@@ -4,13 +4,13 @@
 
 ## Features
 
-- **🔄 Automated Data Sync** - Connects to Veracross API to retrieve rotation day data
-- **📅 iCal Compatible** - Generates standard calendar format for universal device compatibility
-- **🌏 Timezone Optimized** - Built for Asia/Seoul timezone with all-day events
-- **📱 Multi-Device Support** - Subscribe once, sync across all devices
-- **⚙️ Smart Processing** - Applies override rules for special schedules and Day 0 events
-- **🚀 GitHub Pages Integration** - Automatically publishes calendar updates
-- **⏰ Scheduled Updates** - Configurable automation (daily/weekly)
+🔄 Automated Data Sync** - Connects to Veracross API to retrieve rotation day data
+📅 iCal Compatible** - Generates standard calendar format for universal device compatibility
+🌏 Timezone Optimized** - Built for Asia/Seoul timezone with all-day events
+📱 Multi-Device Support** - Subscribe once, sync across all devices
+⚙️ Smart Processing** - Applies override rules for special schedules and Day 0 events
+🚀 GitHub Pages Integration** - Automatically publishes calendar updates
+⏰ Scheduled Updates** - Configurable automation (daily/weekly)
 
 ## Quick Start
 
