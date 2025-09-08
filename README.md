@@ -157,7 +157,7 @@ Output: "Day 7"
 |--------------|----------------|--------------|
 | Day 3 | `<Default>` | Day 3 |
 | Day 1 | Day 0 - First Day of School | Day 0 - First Day of School |
-| Day 4 | Thursday 5 | Day 5 |
+| Day 4 | Thursday 4 | Day 4 |
 | Day 2 | Day 0 - Half Day | Day 0 - Half Day |
 
 ## Output Files
