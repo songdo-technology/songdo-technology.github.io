@@ -147,7 +147,7 @@ Output: "Day 0 - Assembly"
 
 ### Thursday Pattern Conversion
 ```
-Input:  Day 2 + "Thursday 7"
+Input:  Day 7 + "Thursday 7"
 Output: "Day 7"
 ```
 
