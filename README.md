@@ -158,7 +158,7 @@ Output: "Day 7"
 | Day 3 | `<Default>` | Day 3 |
 | Day 1 | Day 0 - First Day of School | Day 0 - First Day of School |
 | Day 4 | Thursday 5 | Day 5 |
-| Day 2 | Day 0 - Assembly | Day 0 - Assembly |
+| Day 2 | Day 0 - Half Day | Day 0 - Half Day |
 
 ## Output Files
 
@@ -284,8 +284,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 For issues and questions:
-- 📧 Contact your school's IT department
-- 🐛 [Report bugs](https://github.com/songdo-technology/songdo-technology.github.io/issues)
+- 📧 Contact Technology department (songdo-technology@chadwickschool.org)
 - 📖 Check the troubleshooting section above
 
 ---
